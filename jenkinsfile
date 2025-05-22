@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Stage 1: Build') {
+            steps {
+                echo 'Building the project using Maven'
+            }
+        }
+        stage('Stage 2: Unit and Integration Tests') {
+            steps {
+                echo 'Running unit and integration tests using JUnit'
+            }
+        }
+        stage('Stage 3: Code Analysis') {
+            steps {
+                echo 'Analyzing code with SonarQube'
+            }
+        }
+        stage('Stage 4: Security Scan') {
+            steps {
+                echo 'Performing security scan with OWASP Dependency-Check'
+            }
+        }
+        stage('Stage 5: Deploy to Staging') {
+            steps {
+                echo 'Deploying to staging server (e.g., AWS EC2)'
+            }
+        }
+        stage('Stage 6: Integration Tests on Staging') {
+            steps {
+                echo 'Running integration tests on staging'
+            }
+        }
+        stage('Stage 7: Deploy to Production') {
+            steps {
+                echo 'Deploying to production server (e.g., AWS EC2)'
+            }
+        }
+    }
+}
